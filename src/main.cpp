@@ -111,6 +111,7 @@ void competition_initialize() {}
 
 lightning::TaskManager AUTON_TASKS; //YOU CAN USE THIS MANAGER TO CREATE AND MANAGE TASK DURING THE AUTONOMOUS PERIOD
 void autonomous() {
+  int path = 0;
   //This task would run your odometry system and printing the coordinates and orientation.
   //However, if you dont have an odometry system, the task will print the current orientation.  
   AUTON_TASKS.start_task("TRACK_AND_PRINT", init_track);
@@ -128,7 +129,11 @@ void autonomous() {
   my_chassis.set_turn_exit_conditions(1, 100, 5000);
   
   my_chassis.run_MotionLight_profile("motion.light.txt",0_deg); 
+  if (path = 0){
+      
+  }
 }
+
 
 /**
  * Runs the operator control code. This function will be started in its own task
